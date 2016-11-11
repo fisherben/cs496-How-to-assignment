@@ -7,8 +7,6 @@
 
 <!doctype html>
 
-<!-- following http://blog.js.cytoscape.org/2016/06/08/glycolysis/ cytoscape ex -->
-<!-- following https://codepen.io/yeoupooh/pen/RrBdeZ for setting up Cytoscape container in Bootstrap -->
 <!-- following https://www.youtube.com/watch?v=gqOEoUR5RHg for Bootstrap tutorial -->
 <html lang="en">
 	<head>
@@ -34,18 +32,20 @@
 		
 		<!-- Collapsible Navigation Bar http://www.newthinktank.com/2015/11/learn-bootstrap-one-video/ -->
 		<!-- http://stackoverflow.com/questions/13085962/twitter-bootstrap-full-width-navbar -->
-		<div class="container-fullwidth">
+	   <div class="container-fullwidth" id="myNavContainer">
 		 
 		<!-- .navbar-fixed-top, or .navbar-fixed-bottom can be added to keep the nav bar fixed on the screen -->
-		<nav class="navbar navbar-default">
+		<nav class="navbar navbar-default" id='myNavBar'>
 		  <div class="container-fluid">
 		 
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
-		 
+				<div class='navbar-text nav-center' id='myNavTitle'>					
+						CS 496 Assignmnent-How To Add Google Play Services Multiplayer Support To Your Android Application.				
+				</div>		 
 				<div class='pull-left'>
 				  <!-- Button that toggles the navbar on and off on small screens -->
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false" id='menu-toggle'>
 			 
 				  <!-- Hides information from screen readers -->
 					<span class="sr-only"></span>
@@ -57,18 +57,6 @@
 				  </button>
 				</div>
 			</div>
-		 
-			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div class="collapse navbar-collapse" id="bs-navbar-collapse">
-			  <ul class="nav navbar-nav" id="navBarLeftItems">
-				<li class="active" id="startCrawlListItem"><a href="#" data-toggle="modal" data-target="#webCrawlModal"> Perform Web Crawl <span class="sr-only">(current)</span></a></li>
-				<li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
-				<li><a href="#" data-toggle="modal" data-target="#contactUsModal">Contact Us</a></li>
-			  </ul>
-			  
-			 
-			 </div>			  			 
-			</div><!-- /.navbar-collapse -->
 		  </div><!-- /.container-fluid -->
 		</nav>
 	</div>		
@@ -76,23 +64,26 @@
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Start Bootstrap
-                    </a>
+                <li class="sidebar-brand">            
+                    Contents                    
                 </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Shortcuts</a>
-                </li>
+		<li role="separator" class="divider"></li>
                 <li>
                     <a href="#">Overview</a>
                 </li>
+		<li role="separator" class="divider"></li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#">Getting Started</a>
                 </li>
+		<li role="separator" class="divider"></li>
+                <li>
+                    <a href="#">Using the Api</a>
+                </li>
+		<li role="separator" class="divider"></li>
+                <li>
+                    <a href="#">Wrap Up</a>
+                </li>
+		<li role="separator" class="divider"></li>
                 <li>
                     <a href="#">About</a>
                 </li>                
@@ -104,14 +95,10 @@
         <div id="page-content-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <h1>Simple Sidebar</h1>
-                        <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-                        <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-                        <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-                    </div>
-					<div>{{{body}}}</div>
-                </div>
+                	<div class="col-lg-12">
+				<div>{{{body}}}</div>                                            
+			</div>
+		</div>
             </div>
         </div>
         <!-- /#page-content-wrapper -->

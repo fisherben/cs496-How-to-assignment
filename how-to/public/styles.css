@@ -9,12 +9,21 @@
 
  body {
     overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
  }
+
+
+#myNavContainer{
+    margin: 0px;
+    padding: 0px;
+}
 
 /* Toggle Styles */
 
 #wrapper {
-    padding-left: 0;
+    margin: 0px;
+    padding: 0px;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
@@ -26,6 +35,8 @@
 }
 
 #sidebar-wrapper {
+    margin-top: 0px;
+    padding: 0px;
     z-index: 1000;
     position: fixed;
     left: 250px;
@@ -33,11 +44,20 @@
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background: #A4C639;
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
     -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
+}
+
+#myNavBar{
+    background: #A4C639;		
+    margin: 0px;
+}
+
+.navbar-default .navbar-toggle .icon-bar{
+    //background-color:	black;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -45,6 +65,7 @@
 }
 
 #page-content-wrapper {
+    margin: 0px;
     width: 100%;
     position: absolute;
     padding: 15px;
@@ -74,7 +95,7 @@
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: Ivory;
 }
 
 .sidebar-nav li a:hover {
@@ -92,20 +113,17 @@
     height: 65px;
     font-size: 18px;
     line-height: 60px;
+    color: Ivory;
+    font-weight: bold;
 }
 
 .sidebar-nav > .sidebar-brand a {
-    color: #999999;
+    color: Ivory;
 }
 
 .sidebar-nav > .sidebar-brand a:hover {
     color: #fff;
     background: none;
-}
-
-#navBarImage {
-		height: 80px;
-		width: 120px;
 }
 
 .navbar-inverse {
@@ -130,9 +148,11 @@
     display: block!important;
     background-color: transparent;
     border:1px solid #333333;
+    margin: 0px;
+    padding: 0px;
   }
 
-  .zero-margins;
+  //.zero-margins;
 
   .icon-bar-always {
     .icon-bar;
@@ -146,8 +166,28 @@
   }
 }
 
+.divider {
+  height: 1px;
+  width:100%;
+  display:block; /* for use on default inline elements like span */
+  margin: 9px;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+
+#myNavTitle{	
+	font-size: 250%;
+	text-align: center;
+	text-decoration: underline;
+	//font-weight: bold;
+	font-family: 'Permanent Marker', cursive;
+	color: Ivory;
+}
+
 @media(min-width:768px) {
     #wrapper {
+	margin: 0px;
+        padding-top: 0px;
         padding-left: 250px;
     }
 
@@ -164,7 +204,7 @@
     }
 
     #page-content-wrapper {
-        padding: 20px;
+        //padding: 20px;
         position: relative;
     }
 
@@ -175,6 +215,8 @@
     
     .navbar-header
     {
+	margin: 0px;
+        padding: 0px;
         float: none;
     }
 
