@@ -3,6 +3,8 @@
  * Copyright 2013-2016 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap/blob/gh-pages/LICENSE)
  * https://github.com/BlackrockDigital/startbootstrap-simple-sidebar/blob/master/css/simple-sidebar.css
+ * http://stackoverflow.com/questions/23597897/twitter-bootstrap-how-to-achieve-an-always-collapsed-navbar-dropdown-menu
+ * http://stackoverflow.com/questions/28879905/bootstrap-css-how-to-make-always-visible-navbar-toggle
  */
 
  body {
@@ -106,6 +108,44 @@
 		width: 120px;
 }
 
+.navbar-inverse {
+
+  .navbar-toggle-always {
+    border-color: @navbar-inverse-toggle-border-color;
+    &:hover,
+    &:focus {
+      background-color: @navbar-inverse-toggle-hover-bg;
+    }
+    .icon-bar-always {
+      background-color: @navbar-inverse-toggle-icon-bar-bg;
+    }
+  }
+}
+
+.navbar-toggle-always{
+
+  .navbar-toggle;
+
+  @media (min-width: 768px){
+    display: block!important;
+    background-color: transparent;
+    border:1px solid #333333;
+  }
+
+  .zero-margins;
+
+  .icon-bar-always {
+    .icon-bar;
+    border:1px solid #fff;
+    display: block;
+    border-radius: 1px;
+  }
+
+  .icon-bar-always + .icon-bar-always {
+    margin-top: 4px;
+  }
+}
+
 @media(min-width:768px) {
     #wrapper {
         padding-left: 250px;
@@ -131,5 +171,20 @@
     #wrapper.toggled #page-content-wrapper {
         position: relative;
         margin-right: 0;
+    }
+    
+    .navbar-header
+    {
+        float: none;
+    }
+
+    .navbar-toggle
+    {
+        display: block;
+    }
+
+    .navbar-collapse.collapse
+    {
+        display: none !important;
     }
 }
