@@ -30,10 +30,88 @@
 		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 		<script src='base.js'></script>
 	</head>	 
-<body>
-
+	<body>
+		
+		<!-- Collapsible Navigation Bar http://www.newthinktank.com/2015/11/learn-bootstrap-one-video/ -->
+		<!-- http://stackoverflow.com/questions/13085962/twitter-bootstrap-full-width-navbar -->
+		<div class="container-fullwidth">
+		 
+		<!-- .navbar-fixed-top, or .navbar-fixed-bottom can be added to keep the nav bar fixed on the screen -->
+		<nav class="navbar navbar-default">
+		  <div class="container-fluid">
+		 
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+		 
+			  <!-- Button that toggles the navbar on and off on small screens -->
+			  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+		 
+			  <!-- Hides information from screen readers -->
+				<span class="sr-only"></span>
+		 
+				<!-- Draws 3 bars in navbar button when in small mode -->
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			  </button>
+		 
+			  <!-- You'll have to add padding in your image on the top and right of a few pixels (CSS Styling will break the navbar) -->
+			  <!-- https://www.iconfinder.com/icons/559717/bot_google_bot_internet_seo_spider_web_web_crawler_icon -->
+			  <a class="pull-left" href="#" data-toggle="modal" data-target="#aboutModal"><img id="navBarImage" src="spiderImg1.png"></a>
+			</div>
+		 
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-navbar-collapse">
+			  <ul class="nav navbar-nav" id="navBarLeftItems">
+				<li class="active" id="startCrawlListItem"><a href="#" data-toggle="modal" data-target="#webCrawlModal"> Perform Web Crawl <span class="sr-only">(current)</span></a></li>
+				<li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
+				<li><a href="#" data-toggle="modal" data-target="#contactUsModal">Contact Us</a></li>
+			  </ul>
+			  
+			 <div class="navbar-form navbar-right" "btn-group btn-group-default" role="group" id="navBarRightItems">
+				<div class="btn-group dropdown" role="group">
+					<button class="btn btn-default dropdown-toggle" type="button" id="layoutOptionsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Layout Algorithm
+					<span class="caret"></span>
+					</button>			  
+					<ul id="layoutList" class="dropdown-menu dropdown-menu-right">
+						<li><a href="#" data-layout="breadthfirst">Breadth First</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="spread">Spread</a></li>					
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="circle">Circle</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="concentric">Concentric</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="grid">Grid</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="random">Random</a></li>					
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="cola">Cola</a></li>					
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="dagre">Dagre</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" data-layout="cose">Cose</a></li>
+					</ul>
+				</div>  
+				<div class="btn-group dropdown" role="group">
+					<button class="btn btn-default dropdown-toggle" type="button" id="graphOptionsButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">Graph Options	
+					<span class="caret"></span>
+					</button>			  
+					<ul class="dropdown-menu dropdown-menu-left" id="graphOptionsList">
+						<!-- https://codepen.io/bseth99/pen/fboKH -->
+						<li><a href="#" class="small" data-value="option1" tabIndex="-1"><input id="showLabelsCheck" type="checkbox" checked/>&nbsp;Show Node Labels</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#" class="small" data-value="option2" tabIndex="-1"><input id="showAnimationCheck" type="checkbox"/>&nbsp;Show Animations</a></li>						
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Animation Options</a></li>	
+					</ul>				  
+				</div>
+			 </div>			  			 
+			</div><!-- /.navbar-collapse -->
+		  </div><!-- /.container-fluid -->
+		</nav>
+	</div>		
     <div id="wrapper">
-
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <ul class="sidebar-nav">
@@ -82,7 +160,6 @@
             </div>
         </div>
         <!-- /#page-content-wrapper -->
-
     </div>      
 </body>
 </html>
