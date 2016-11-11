@@ -25,8 +25,44 @@
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>	
 							
 		<link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
+		<script src='base.js'></script>
 	</head>	 
 	<body>
-		{{{body}}}
+	<!-- Left navigation drawer taken from http://www.bootply.com/88026 
+			from http://stackoverflow.com/questions/19397140/collapsing-sidebar-with-bootstrap-3 -->
+		<div class="page-container">
+			<!-- top navbar -->
+			<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="offcanvas" data-target=".sidebar-nav">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">Project Name</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="container">
+				<div class="row row-offcanvas row-offcanvas-left">
+					<!-- sidebar -->
+					<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+						<ul class="nav">
+						<li class="active"><a href="#">Getting started</a></li>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">About</a></li>              
+						</ul>
+					</div>
+					<!-- main area -->
+					<div class="col-xs-12 col-sm-9">
+						{{{body}}}
+					</div><!-- End col-xs-12 main -->
+				</div><!-- End row-->
+			</div><!-- End container-->
+		</div> <!-- End page-container-->
+		
 	</body>
 </html>
