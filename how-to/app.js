@@ -33,6 +33,26 @@ app.get('/', function (req, res, next) {
 	  var context = {};
 	  res.render('home', context);
   });
+
+app.get('/about', function (req, res, next) { 
+	  var context = {};
+	  res.render('about', context);
+});
+
+app.get('/started', function (req, res, next) { 
+	  var context = {};
+	  res.render('gettingStarted', context);
+});
+
+app.get('/using', function (req, res, next) { 
+	  var context = {};
+	  res.render('usingApi', context);
+});
+
+app.get('/wrapup', function (req, res, next) { 
+	  var context = {};
+	  res.render('wrapup', context);
+});
 // [END hello_world]
 
 //listener all for unrecognized urls
