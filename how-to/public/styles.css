@@ -230,7 +230,7 @@
         display: block;
     }
 
-    .navbar-collapse.collapse
+    #menu-toggle
     {
         display: none !important;
     }
