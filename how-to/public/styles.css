@@ -231,7 +231,7 @@
         display: block;
     }
 
-    #menu-toggle
+    navbar-collapse.collapse
     {
         display: none !important;
     }
