@@ -40,13 +40,14 @@
 }
 
 #sidebar-wrapper {
-    margin-top: 0px;
+    margin-top: 20px;
     padding: 0px;
-    z-index: 1000;
-    position: fixed;
+    z-index: 1000;    
     left: 250px;
     width: 0;
     height: 100%;
+	top: #myNavContainer.bottom;
+	position: absolute;
     margin-left: -250px;
     overflow-y: auto;
     background: #A4C639;
@@ -190,7 +191,28 @@
 	color: Ivory;
 }
 
+#myNavTitle{
+	font-size: 150%;
+	text-align: center;
+	text: "CS496 - How To";
+	text-decoration: underline;
+	//font-weight: bold;
+	font-family: 'Permanent Marker', cursive;
+	color: Ivory;
+}
+
 @media(min-width:768px) {
+	
+	
+	#myNavTitle{	
+		font-size: 250%;
+		text-align: center;
+		text-decoration: underline;
+		//font-weight: bold;
+		font-family: 'Permanent Marker', cursive;
+		color: Ivory;
+	}
+	
     #wrapper {
 	margin: 0px;
         padding-top: 0px;
@@ -202,11 +224,15 @@
     }
 
     #sidebar-wrapper {
-        width: 250px;
+        width: 250px;		
+		top: #myNavContainer.bottom;
+		position: absolute;
     }
 
     #wrapper.toggled #sidebar-wrapper {
-        width: 0;
+        width: 0;		
+		top: #myNavContainer.bottom;
+		position: absolute;
     }
 
     #page-content-wrapper {
@@ -221,7 +247,7 @@
     
     .navbar-header
     {
-	margin: 0px;
+		margin: 0px;
         padding: 0px;
         float: none;
     }

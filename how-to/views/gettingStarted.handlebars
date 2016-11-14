@@ -2,7 +2,43 @@
 	<h2>Getting Started</h2>
 	<div class="container">	
 	<h3>Where to begin?</h3>
-		<p>Here's where to start. 
+		<p><a href="https://developers.google.com/games/services/android/turnbasedMultiplayer">Google Play Games Services has a good tutorial on getting started</a>.  However I did run into a few gaps in knowledge and a few problems when trying to walk the installation of the <a href="https://github.com/playgameservices/android-basic-samples">android-basic-samples</a>, so I think it's worth walking through the process.
 		</p>
+		<h3>Step 1: </h3><p>Navigate to the <a href="https://github.com/playgameservices/android-basic-samples">android-basic-samples Github repository</a> and download it as a zip file.<img src="githubZipDownload.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>Now move the zip file on your machine to your AndroidStudioProjects folder and then extract the zip file. Next open up Android Studio, and then click on File->New->Import Project..
+		<img src="newImportProject.png" class="img-fluid" alt="Responsive image">		
+		
+		</p>
+		<p>Next after the dialog box opens up naviagate to the AndroidStudioProjects folder and open the folder that was just extracted and then select the Basic Samples folder, and select ok.  Android Studio will then import the project.
+		<img src="importBasicSamples.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>Here I encountered an error, and the project could not be built.
+		<img src="noPropertyError.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>To resolve this I just clicked on the open file link and then hard coded in the buildToolsVersion to "23.0.2".  
+		<img src="resolveError.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>Next navigate to the Google Play Developers Console and select Game Services.
+		<img src="resolveError.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>Then select Set up Google Play games services. Enter Skeleton for the name of the game, and Strategy as the type of game.  Then click continue and on the next page click Save.  
+		<img src="setUp.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>Now on the side nav panel click on Linked apps, then select Android.  Choose a package name and then turn on Turn-based multiplayer and then click save and continue.
+		<img src="linkedApps.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>Now we need to Authorize the app, by clicking on Authorize your app now.  I'm using a Windows machine so this is how I found the signing certificate.  Open your java jdk and then hold shift and right click on the bin file and select open command window here.  Next paste in this command keytool -exportcert -alias androiddebugkey -keystore C:/users/Ben/.android/debug.keystore -list -v (note your path to your debug keystore will be different then mine but it is in your .android folder, so point there).  When you are prompt for a password enter 'android'.
+		<img src="linkedApps.png" class="img-fluid" alt="Responsive image">
+		</p>
+		<p>Next copy in the SHA1 key in to the dialog box and hit enter.  You should end up at a screen that says 'Successfully linked you Client ID'.  Note that the number (494670159475) below the Skeleton at the top of the page, is the app id.
+		<img src="linkedApp.png" class="img-fluid" alt="Responsive image"></p>
+		<p>Before leaving, on the far left nav panel click on Settings and add any 'Gmail accounts with testing access' you think you need.</p>
+		<p>Back in Android Studio expand the SkeletonTbmp and open the build.gradle file.  In the build.gradle file enter in a package name your created for the game in the Google Play Developer Console, I used com.boo.fisher.skeleton.
+		<img src="skeletongradle.png" class="img-fluid" alt="Responsive image"></p>
+		</p>
+		<p>Next open up the SkeletonTbml/res/value/ids file and add your app id, it is found on the Google Play Develpers Console, click on Linked apps and scroll to the bottom is should show your app id.  Copy that value and paste into the id's file in your Android Studio SekeletonTbml project.</p>
+		<img src="appIdPlay.png" class="img-fluid" alt="Responsive image"></p>
+		<img src="appIdStudio.png" class="img-fluid" alt="Responsive image"></p>
 	</div>	
 </div>
