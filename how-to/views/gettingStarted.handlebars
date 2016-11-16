@@ -1,56 +1,58 @@
 <div class="container">
 	<h2>Getting Started</h2>
-	<div class="container">	
+	<div class="container" id="gettingStartedText">	
 	<h3>Where to begin?</h3>
 		
-		<p><a href="https://developers.google.com/games/services/android/turnbasedMultiplayer">Google Play Games Services has a good tutorial on getting started</a>.  However I did run into a few gaps in knowledge and a few problems when trying to walk the installation of the <a href="https://github.com/playgameservices/android-basic-samples">android-basic-samples</a>, so I think it's worth walking through the process.
+		<p><a href="https://developers.google.com/games/services/android/turnbasedMultiplayer">Google Play Games Services has a good tutorial on getting started</a>.  However I did run into a few gaps in knowledge and a few problems when trying to walk the through the installation of the <a href="https://github.com/playgameservices/android-basic-samples">android-basic-samples</a>, so I think it's worth walking through the process.
 		</p>
-		<p>First it's worth mentioning that the version of Android Studio you are using will greatly impact how painless or painful it is to get the sample projects up and running on your machine.  This is what I had to go through while using Android Studion version 2.2.
+		<p>First it's worth mentioning that the version of Android Studio you are using will greatly impact how painless or painful it is to get the sample projects up and running on your machine.  This is what I had to go through while using Android Studion version 2.2.</p>
+		<p>
 		<img src="images/gettingStarted/androidStudioVersion.png" class="img-fluid" alt="Responsive image">		
 		</p>	
-		<p>Navigate to the <a href="https://github.com/playgameservices/android-basic-samples">android-basic-samples Github repository</a> and download it as a zip file.<img src="images/gettingStarted/githubZipDownload.png" class="img-fluid" alt="Responsive image">
+		<p>Navigate to the <a href="https://github.com/playgameservices/android-basic-samples">android-basic-samples Github repository</a> and download it as a zip file.</p>
+		<p><img src="images/gettingStarted/githubZipDownload.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Now move the zip file on your machine to your AndroidStudioProjects folder and then extract the zip file. Next open up Android Studio, and then click on File->New->Import Project..
+		<p>Now move the zip file onto your machine to your AndroidStudioProjects folder and then extract the zip file. Next open up Android Studio, and then click on File->New->Import Project..</p><p>
 		<img src="images/gettingStarted/newImportProject.png" class="img-fluid" alt="Responsive image">				
 		</p>
-		<p>Next after the dialog box opens up naviagate to the AndroidStudioProjects folder and open the folder that was just extracted and then select the Basic Samples folder, and select ok.  Android Studio will then import the project.
+		<p>Next after the dialog box opens up naviagate to the AndroidStudioProjects folder and open the folder that was just extracted and then select the Basic Samples folder, and select ok.  Android Studio will then import the project.</p><p>
 		<img src="images/gettingStarted/importBasicSamples.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Here I encountered an error, and the project could not be built.
+		<p>Here I encountered an error, and the project could not be built.</p><p>
 		<img src="images/gettingStarted/noPropertyError.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>To resolve this I the build.gradle file for BasicSamples then hard coded in the android_min_sdk_version = 15 and build_tools_version = android_version.  
+		<p>To resolve this I opened up the build.gradle file for BasicSamples then hard coded in the android_min_sdk_version = 15 and build_tools_version = android_version.</p><p>  
 		<img src="images/gettingStarted/BasicSampleGradle.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Next open up the settings by navigating to File->Settings and then in the Dialog box expand Build, Execution, Deployment and select Instant Run, finally unselect Enable Instant Run to hot swap code/resource changes on deploy(default).  
+		<p>Next open up the settings by navigating to File->Settings and then in the Dialog box expand Build, Execution, Deployment and select Instant Run, finally unselect Enable Instant Run to hot swap code/resource changes on deploy(default).</p><p>  
 		<img src="images/gettingStarted/disableInstantRun.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Next navigate to the Google Play Developers Console and select Game Services.
+		<p>Next navigate to the Google Play Developers Console and select Game Services.</p><p>
 		<img src="images/gettingStarted/gameServices.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Then select Set up Google Play games services. Enter Skeleton for the name of the game, and Strategy as the type of game.  Then click continue and on the next page click Save.  
+		<p>Then select Set up Google Play games services. Enter Skeleton for the name of the game, and Strategy as the type of game.  Then click continue and on the next page click Save.</p><p>  
 		<img src="images/gettingStarted/setUp.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Now on the side nav panel click on Linked apps, then select Android.  Choose a package name and then turn on Turn-based multiplayer and then click save and continue.
+		<p>Now on the side nav panel click on Linked apps, then select Android.  Choose a package name and then turn on Turn-based multiplayer and then click save and continue.</p><p>
 		<img src="images/gettingStarted/linkedApps.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Now we need to Authorize the app, by clicking on Authorize your app now.  I'm using a Windows machine so this is how I found the signing certificate.  Open your java jdk and then hold shift and right click on the bin file and select open command window here.  Next paste in this command keytool -exportcert -alias androiddebugkey -keystore C:/users/Ben/.android/debug.keystore -list -v (note your path to your debug keystore will be different then mine but it is in your .android folder, so point there).  When you are prompt for a password enter 'android'.
+		<p>Now we need to Authorize the app, by clicking on Authorize your app now.  I'm using a Windows machine so this is how I found the signing certificate.  Open your java jdk folder and then hold shift and right click on the bin file and select open command window here.  Next paste in this command 'keytool -exportcert -alias androiddebugkey -keystore C:/users/Ben/.android/debug.keystore -list -v' (note your path to your debug keystore will be different then mine but it is in your .android folder, so point there).  When you are prompt for a password enter 'android'.</p><p>
 		<img src="images/gettingStarted/sha1.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Next copy in the SHA1 key in to the dialog box and hit enter.  You should end up at a screen that says 'Successfully linked you Client ID'.  Note that the number (494670159475) below the Skeleton at the top of the page, is the app id.
+		<p>Next copy in the SHA1 key in to the dialog box and hit enter.  You should end up at a screen that says 'Successfully linked you Client ID'.  Note that the number (494670159475) below the Skeleton at the top of the page, is the app id.</p><p>
 		<img src="images/gettingStarted/linkedApp.png" class="img-fluid" alt="Responsive image"></p>
 		<p>Before leaving, on the far left nav panel click on Settings and add any 'Gmail accounts with testing access' you think you need.</p>
-		<p>Back in Android Studio expand the SkeletonTbmp and open the build.gradle file.  In the build.gradle file enter in a package name your created for the game in the Google Play Developer Console, I used com.boo.fisher.skeleton.
-		<img src="images/gettingStarted/skeletongradle.png" class="img-fluid" alt="Responsive image"></p>
+		<p>Back in Android Studio expand the SkeletonTbmp and open the build.gradle file.  In the build.gradle file enter in a package name your created for the game in the Google Play Developer Console, I used com.boo.fisher.skeleton.</p><p>
+		<img src="images/gettingStarted/skeletongradle.png" class="img-fluid" alt="Responsive image">
 		</p>
-		<p>Next open up the SkeletonTbml/res/value/ids file and add your app id, it is found on the Google Play Develpers Console, click on Linked apps and scroll to the bottom is should show your app id.  Copy that value and paste into the id's file in your Android Studio SekeletonTbml project.</p>
+		<p>Next open up the SkeletonTbml/res/value/ids file and add your app id, it is found on the Google Play Develpers Console, click on Linked apps and scroll to the bottom is should show your app id.  Copy that value and paste into the id's file in your Android Studio SekeletonTbml project.</p><p>
 		<img src="images/gettingStarted/appIdPlay.png" class="img-fluid" alt="Responsive image"></p>
+		<p>
 		<img src="images/gettingStarted/appIdStudio.png" class="img-fluid" alt="Responsive image"></p>
-		<p>Now it's time to Sync Project with Gradle Files the application, so click the Sync Projeect with Gradle Files button.  You may see a dialog pop up asking you to update Android Gradle Plugin.  Click Don't remind me again for this project.
+		<p>Now it's time to Sync Project with Gradle Files the application, so click the Sync Projeect with Gradle Files button.  You may see a dialog pop up asking you to update Android Gradle Plugin.  Click Don't remind me again for this project.</p><p>
 		<img src="images/gettingStarted/noUpgrade.png" class="img-fluid" alt="Responsive image"></p>
 		</p>
-		<p>Once the application finishes being built you can then run it.  In the drop down button click SkeletonTbmp and then press the green run button. My experience was that the application runs on my phone, however I could not get it to run on a emulator.
-		<img src="images/gettingStarted/runProg.png" class="img-fluid" alt="Responsive image"></p>
-		</p>
+		<p>Once the application finishes being built you can then run it.  In the drop down button click SkeletonTbmp and then press the green run button. My experience was that the application runs on my phone, however I could not get it to run on a emulator.</p><p>
+		<img src="images/gettingStarted/runProg.png" class="img-fluid" alt="Responsive image"></p>		
 	</div>	
 </div>
