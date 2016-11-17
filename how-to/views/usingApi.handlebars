@@ -1,8 +1,38 @@
 <div class="container">
-	<h2>Using the Api</h2>
-	<div class="container">	
-	<h3>What Now?</h3>
-		<p> Now we use the Api.
-		</p>
+	<h2 class="myHeaderText">Using the Api</h2>
+	<div class="container myBodyText" >	
+	<h3 class="myHeaderText">What Now?</h3>
+		<p>Now we use the Api by running and learning how SkeletonTbmp is working.</p>
+		<p>The <a href="https://developers.google.com/games/services/android/turnbasedMultiplayer">Google Play Games Services tutorial</a> is a good resource to get familiar with, and so if you haven't read it yet please do so.</p> 
+		<p>Lets walk through the <a href="https://github.com/playgameservices/android-basic-samples/blob/master/BasicSamples/SkeletonTbmp/src/main/java/com/google/example/tbmpskeleton/SkeletonActivity.java">SkeletonTbmp (Skeleton Turn Based Multi-Player) game</a> that we have just set up in the <a href="https://how-to-games-turn-based.appspot.com/started">Getting Started section</a>.</p>
+		<p>First lets talk about <a href="https://developers.google.com/games/services/android/init">BaseGameUtilities</a> which is a library that Google Play Game Services includes in the <a href="https://github.com/playgameservices/android-basic-samples">BasicSamples/libraries</a> to simplify resolving connection errors and to display error dialogs.</p>
+		<p>Next thing to cover is what the interfaces the SkeletonActivity.java class implements are for.  We can see that the class implements 5 interfaces; GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, OnInvitationReceivedListener, View.OnClickListener, and OnTurnBasedMatchUpdateReceivedListener. GoogleApiClient.ConnectionCallbacks is not surprisingly used to inform the client when the GoogleApiClient is connected and is used to implement logic after connection by implementing onConnected and onConnectionSuspended methods. Likewise GoogleApiClient.OnConnectionFailedListener is used to inform the client the GoogleApiClient's connection has failed and is used to implement whatever logic necessary in the onConnectionFailed callback.
+        View.OnClickListener is used to handle click events detected in the application by overidding onClick.  Now the interesting interfaces with respect to the game are OnInvitationReceivedListener and OnTurnBasedMatchUpdateReceivedListener. OnInvitationReceivedListener is used to listen for invitations, the client needs to override the onInvitationRecieved and onInvitationRemoved methods to handle invitation events.  The OnTurnBasedMatchUpdateReceivedListener is used update a turn based match when an event is recieved, the user needs to override the methods onTurnBasedMatchRecieved and onTurnBasedMatchRemoved to handle the events.</p>
+		<div class="well">
+			<script src="https://gist.github.com/fisherben/b9f63d0d20035c68fd322ca38b4d13e6.js"></script>
+		</div>		
+		
+		<p>The first thing the SkeletonActivity.java class does is attempt to build an instance of <a href="https://developers.google.com/android/guides/api-client">GoogleApiClient</a> that can automatically manage it's connection to the Google Play Services.  The <a href="https://developers.google.com/android/guides/api-client">GoogleApiClient</a> is the main entry point used to accessed Google Play Services Api's.  Notice that we add a api 'Games.API' and a scope 'Games.SCOPE_GAMES' when building the <a href="https://developers.google.com/android/guides/api-client">GoogleApiClient</a>.</p>
+		<div class="well">
+		<script src="https://gist.github.com/fisherben/f4234f439f98a069f67a8fff6d87f380.js"></script>
+		</div>
+		<p>Also notice that the <a href="https://developers.google.com/android/guides/api-client">GoogleApiClient</a> is connected and disconnected in onStart and onStop.  When <a href="https://developers.google.com/android/guides/api-client">GoogleApiClient</a> connect method is called the application will prompt the user for authentication, if the user is already connected or is in the middle of connecting the connect call is ignored.</p>
+		<div class="well">
+		<script src="https://gist.github.com/fisherben/bdc906ff4d5279abeb6ccb6085e4f17e.js"></script>
+		</div>
+		<p>When the user is connects to Google Play Services the onConnected method callback is executed. Notice the method returns a parameter Bundle called connectionHint.  The connectionHint Bundle contains a TurnBasedMatch object that is used to update the game and is shared asynchronously with the game participants over the course of the game.</p>
+		<div class="well">
+			<script src="https://gist.github.com/fisherben/422bf8908e3df438af541fb6d2f51fe8.js"></script>
+		</div>
+		<p>Inside the onConnected method two more methods are called the first is updateMatch and the second is setViewVisibility.  The updateMatch method takes a TurnBasedMatch parameter as an argument and is the main function that is called when the user tries to select or start a match. Inside the updateMatch method two fields are extracted from the TurnBasedMatch object; match status and turn status.  Match status will tell the user if the match is still active and turn status will tell the user whose turn it is with respect to the match, if it is this clients turn then the user takes their turn and then the TurnBasedMatch object is updated as well as the user interface.</p>
+		<div class="well">
+			<script src="https://gist.github.com/fisherben/acc1f285be663e44c8d00f4c4af021a1.js"></script>
+		</div>
+		<p>The setViewVisibility method is called to show and hide Android views depending on whether or not the user is connected to GoogleApiClient or playing their turn.  The application keeps track of when the player is choosing a matchup or making their turn or signed out and then displays the appropriate view.</p>
+		<div class="well">
+			<script src="https://gist.github.com/fisherben/7e2ac78678aea56baae7e4d36be33a16.js"></script>
+		</div>
+		
+		<p>As we know the users need to be <a href="https://developers.google.com/games/services/training/signin">authenticated with Google Play Games Services</a> as such </p>
 	</div>
 </div>

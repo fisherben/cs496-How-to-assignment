@@ -12,8 +12,16 @@
     margin: 0px;
     padding: 0px;
  }
+ 
+ .myHeaderText{ 	
+	text-align: center;
+	text-decoration: underline;
+	//font-weight: bold;
+	font-family: 'Permanent Marker', cursive;
+	color: Black;
+ }
 
-#gettingStartedText{    
+.myBodyText{    
     font-size: 18px;  
     color: #dd4b39;
     font-weight: bold;
